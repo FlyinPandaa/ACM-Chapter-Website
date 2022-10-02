@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import uploadEventsToFirebase from "../../scripts/catLife";
 import { getEventsFromFirebase } from "../../scripts/events";
 import Event from "./Event";
+// import "../../pages/events/Events.scss";
 
 const Events = () => {
   const [pastEvents, setPastEvents] = useState([]);
@@ -46,7 +47,7 @@ const Events = () => {
   }, []);
 
   return (
-    <div>
+    <div style={{display: 'flex', flexDirection: 'row'}}>
       {nowEvents[0] ? <Event events={nowEvents} type={"now"} /> : ""}
       {futureEvents[0] ? <Event events={futureEvents} type={"future"} /> : ""}
       {pastEvents[0] ? <Event events={pastEvents} type={"past"} /> : ""}
